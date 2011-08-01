@@ -5,7 +5,7 @@
 if [ ! $( id -u ) -eq 0 ]; then
 	echo "You must be root to run this script."
 	echo "Please enter su before running this script again."
-	exit
+	exit 2
 fi
 
 USERNAME=$(logname)
@@ -26,3 +26,5 @@ echo "ADDING HELP PAGES"
 mkdir /usr/share/swiftlinux
 mkdir /usr/share/swiftlinux/help
 cp -r $DIR_DEVELOP/add_help/usr_share_swiftlinux_help/* /usr/share/swiftlinux/help
+
+exit 0 
